@@ -1,0 +1,5 @@
+# This is a TOML document.
+# export SAAS_COMMON_CONFIG="prod"
+
+#dev | test | beta | prod，应用运行模式
+AppMode = "prod"

@@ -1,0 +1,18 @@
+# This is a TOML document.
+# export SAAS_COMMON_CONFIG="dev"
+
+#dev | test | beta | prod，应用运行模式
+AppMode = "dev"
+
+[Mdbg]
+Host = "127.0.0.1"
+Port = 12345
+Enable = 1  # 1:开启  0：关闭
+
+# 日志相关配置
+[Log]
+Path = "/var/logs/sa/myexample/myexample.log"
+Level = 2           # 日志级别 [1:TRACE 跟踪,2:DEBUG 调试,3:INFO 信息,4:WARN 警告,5:ERROR 一般错误,6:FATAL 致命错误]
+MaxSize = 2         # MB
+MaxBackups = 3      # 备份个数
+MaxAge = 10         # 保存时间,天

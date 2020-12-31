@@ -1,0 +1,10 @@
+# This is a TOML document.
+# export SAAS_COMMON_CONFIG="test"
+
+#dev | test | beta | prod，应用运行模式
+AppMode = "test"
+
+[Mdbg]
+Host = "127.0.0.1"
+Port = 12345
+Enable = 1  # 1:开启  0：关闭
