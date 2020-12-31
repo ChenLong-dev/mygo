@@ -1,3 +1,3 @@
-module github.com/ChenLong-dev/mygo
+module mygo
 
 go 1.15
