@@ -6,7 +6,7 @@ package main
 
 import (
 	"fmt"
-	"mygo/gobase/config"
+	"github.com/ChenLong-dev/gobase/config"
 	conf "myexample/config"
 )
 
