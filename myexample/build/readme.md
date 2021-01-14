@@ -121,7 +121,7 @@ MaxAge = 10         # 保存时间,天
 [root@node1 supervisor]# sh  install.sh
  ################################# 安装检测supervisor服务 #################################
 WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
-Looking in indexes: http://mirrors.sangfor.org/pypi/simple, http://mirrors.sangfor.org/sfpypi/simple
+Looking in indexes: http://mirrors.xxx.org/pypi/simple, http://mirrors.xxx.org/sfpypi/simple
 Requirement already satisfied: supervisor in /usr/local/lib/python3.8/site-packages (4.2.1)
  === /usr/bin/supervisord install success ===
  /etc/supervisor/ had exist
@@ -147,12 +147,12 @@ root      2145     1  0 19:45 ?        00:00:00 /usr/bin/python3.8 /usr/local/bi
 
 supervsior使用的python环境为python3.7以上
 
-内网安装需要修改pip源（http://mirrors.sangfor.org/help/2018/01/13/pypi.html）
+内网安装需要修改pip源（http://mirrors.xxx.org/help/2018/01/13/pypi.html）
 
 或直接下载安装：
 
 ```
-pip3 install -i http://mirrors.sangfor.org/pypi/simple --trusted-host mirrors.sangfor.org supervisor
+pip3 install -i http://mirrors.xxx.org/pypi/simple --trusted-host mirrors.xxx.org supervisor
 ```
 
 ##### 2）supervsior相关命令
