@@ -6,6 +6,7 @@ github.com/ChenLong-dev/gobase v0.0.1 h1:C9xUPP+f3H4mJu0AU3S67lSqJgLJhArWFtFha94
 github.com/ChenLong-dev/gobase v0.0.1/go.mod h1:LqyKnuT5Ea1f1QBIPmyqr3GN3nky3D2iQtzlhf3MQ+E=
 github.com/ChenLong-dev/gobase v0.0.2 h1:rQR03lD9McQ1OU4h1QR+q9FcUj3lxSDKakVCT14DcKg=
 github.com/ChenLong-dev/gobase v0.0.2/go.mod h1:rGiHSbzesTyL5WAg0u05hziCi+jmBB3CqhH61JruNGc=
+github.com/ChenLong-dev/gobase v0.0.3/go.mod h1:LqyKnuT5Ea1f1QBIPmyqr3GN3nky3D2iQtzlhf3MQ+E=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
@@ -445,6 +446,7 @@ golang.org/x/sys v0.0.0-20200519105757-fe76b779f299/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200615200032-f1bc736245b1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20201015000850-e3ed0017c211 h1:9UQO31fZ+0aKQOFldThf7BKPMJTiBfWycGh/u3UoO88=
 golang.org/x/sys v0.0.0-20201015000850-e3ed0017c211/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=

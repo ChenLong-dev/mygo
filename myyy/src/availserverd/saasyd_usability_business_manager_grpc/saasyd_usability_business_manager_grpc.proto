@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package usability_business_manager;
+
+enum Code {
+    SUCCESS = 0;
+    REQUEST_FAILED = 500;
+    PARAM_ERROR = 501;
+    FAIL = 1;
+}
+
+
+message BusinessTaskAddReq {
+    string url = 1;
+    int32 freq = 10;
+}
+message BusinessTaskAddRsp {
+    Code code = 1;
+   string message = 2;
+}
+
+message BusinessTaskDelReq {
+    string url = 1;
+}
+message BusinessTaskDelRsp {
+    Code code = 1;
+   string message = 2;
+}
+
+message BusinessTaskEditReq {
+    string url = 1;
+    int32 freq = 10;
+}
+message BusinessTaskEditRsp {
+    Code code = 1;
+   string message = 2;
+}
+service BusinessTaskManager {
+    rpc BusinessTaskAdd(BusinessTaskAddReq) returns (BusinessTaskAddRsp) {}
+    rpc BusinessTaskDel(BusinessTaskDelReq) returns (BusinessTaskDelRsp) {}
+    rpc BusinessTaskEdit(BusinessTaskEditReq) returns (BusinessTaskEditRsp) {}
+}

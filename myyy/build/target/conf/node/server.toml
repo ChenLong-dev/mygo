@@ -1,0 +1,8 @@
+## server conf
+[availconf]
+region = "cloud_node_bj"
+loginAddr = "10.107.63.72:36767"
+loginPassword = "123456789"
+concurrent = 8000
+detectType = "eye"
+mdbgAddr = "127.0.0.1:16767"

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package usability_business_task_c;
+
+enum Code {
+    SUCCESS = 0;
+    REQUEST_FAILED = 500;
+    PARAM_ERROR = 501;
+    FAIL = 1;
+}
+
+message BusinessTaskReq {
+    int32 offset = 1;
+    int32 limit = 2;
+}
+
+message BusinessTaskRsp {
+    Code code = 1;
+   string message = 2;
+   message Data {
+       message BusinessTask{
+           string url = 1;
+           int32 frequency = 4;
+       }
+       repeated BusinessTask TaskList = 1;
+       int32 total = 2;
+   }
+    Data data = 3;
+}
+
+
+service BusinessTaskList {
+    rpc getBusinessTask(BusinessTaskReq) returns (BusinessTaskRsp) {}
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package usability_log_up_l;
+
+enum Code {
+    SUCCESS = 0;
+    FAIL = 1;
+    REQUEST_FAILED = 500;
+    PARAM_ERROR = 501;
+}
+
+message UsabilityLogReq {
+    string url = 1;
+    string result= 2;
+    int64 happen_time = 3;
+
+
+    message NodeList {
+        message LineResult {
+            string addr = 1;
+            string isp = 2;
+            int32 code = 3;
+            string status = 4;
+        }
+        string node = 1;
+        repeated LineResult line_result = 2;
+    }
+    repeated NodeList node_list = 4;
+}
+message UsabilityLogRsp {
+    Code code = 1;
+   string message = 2;
+}
+
+service UsabilityLogUp {
+    rpc uploadUsabilityLog(UsabilityLogReq) returns (UsabilityLogRsp) {}
+}

@@ -1,0 +1,36 @@
+## server conf
+[mongo]
+Host = "mongodb://10.227.63.170:27017"
+UserName = "root"
+Password = "sangfor123"
+DbName = "saas_dc_detect"
+
+[etcd]
+# hosts = ["etcd_gz.com:2379", "etcd_sh.com:2379", "etcd_bj.com:2379"]
+hosts = ["10.227.30.129:2379", "10.227.30.130:2379", "10.227.30.131:2379"]
+username = "root"
+password = "saas_etcd_root123"
+etcdCert = "/saasdata/etcd/data/ssl/server.pem"
+etcdCertKey = "/saasdata/etcd/data/ssl/server-key.pem"
+etcdCa = "/saasdata/etcd/data/ssl/ca.pem"
+
+[availconf]
+UpdateTaskIntvl = 3600
+CheckIntvl = 10
+CheckTimeout = 7
+KeepLastPointNum = 2
+MaxFlyCheckCount = 20
+EntryAddr = "0.0.0.0:36767"
+EntryPassword = "123456789"
+MdbgAddr = "0.0.0.0:26767"
+DetectType = "acl"
+PointBound = 3
+RegionBound = 1
+DetectLimit = 0
+AlarmAlias = []
+AlarmIntvl = 86400
+GrpcAddr = "10.227.63.72:50001"
+AclGrpcAddr = "127.0.0.1:36166"
+GetEyeinfoGrpcAddr = "10.227.30.109:51142"
+UploadLogGrpcAddr = "10.227.30.109:51140"
+
