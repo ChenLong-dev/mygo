@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package saasyd_acl_query_grpc;
+
+enum Code {
+    SUCCESS                         = 0;
+}
+
+message AclResultReq {
+    uint32 offset                   = 1;
+    uint32 limit                    = 2;
+    string type                     = 3;
+}
+
+message AclResultRsp {
+    uint32 code                     = 1;
+    string msg                      = 2;
+    message Data {
+        string business_url         = 1;
+        string result               = 2;
+    }
+   repeated Data data               = 3;
+}
+
+service AclGrpcServer {
+    //获取acl检测结果
+    rpc GetAclResults(AclResultReq) returns (AclResultRsp) {}
+}

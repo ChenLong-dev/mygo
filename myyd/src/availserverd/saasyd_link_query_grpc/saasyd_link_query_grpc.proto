@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package saasyd_link_query_grpc;
+
+enum Type {
+    LinkResult                         = 0;
+    TargetResult                       = 1;
+}
+
+message LinkResultReq {
+    uint32 offset                      = 1;
+    uint32 limit                       = 2;
+    Type type                          = 3;
+}
+
+message LinkResultRsp {
+    uint32 code                        = 1;
+    string msg                         = 2;
+    message Data {
+        int64 checktime = 1;
+        map<string, UrlResult> results = 2;
+    }
+   Data data                           = 3;
+}
+
+message UrlResult {
+    string url                         = 1;
+    map<string, RegionResult> primarys = 2;
+    map<string, RegionResult> seconds  = 3;
+}
+
+message RegionResult{
+    string region                       = 1;
+    message LineResults {
+        message Line {
+            string addr                 = 1;
+            int32 isp                   = 2;
+        }
+        Line line                       = 1;
+        message Result {
+            int32 code                  = 1;
+            string status               = 2;
+            int64 delay                 = 3;
+        }
+        Result result                   = 2;
+    }
+    repeated LineResults lineResults    = 2;
+}
+
+
+message ResultsReq {
+    uint32 pointBound                   = 1;
+    uint32 regionBound                  = 2;
+    Type type                           = 3;
+}
+
+message ResultsRsp{
+    uint32 code                         = 1;
+    string msg                          = 2;
+    map<string, CheckResult> data       = 3;
+}
+
+message CheckResult{
+    string url                          = 1;
+    int32 PrimaryResult                 = 2;
+    int32 SecondResult                  = 3;
+}
+
+message ResultsAddrReq {
+}
+
+message ResultsAddrRsp{
+    uint32 code                         = 1;
+    string msg                          = 2;
+    map<string, CheckAddrResult> data   = 3;
+}
+
+message CheckAddrResult{
+    string NodeName                     = 1;
+    int32 Result                        = 2;
+    Line Line                           = 3;
+}
+
+message Line {
+    string Addr                         = 1;
+    int32   Isp                         = 2;
+}
+
+service LinkGrpcServer {
+    //获取link当次检测结果
+    rpc GetLastPointResult(LinkResultReq) returns (LinkResultRsp) {}
+    //获取link或target检测结果
+    rpc GetResults(ResultsReq) returns (ResultsRsp) {}
+    //获取target检测线路结果
+    rpc GetAddrResults(ResultsAddrReq) returns (ResultsAddrRsp) {}
+}

@@ -1,0 +1,33 @@
+## server conf
+[mongo]
+Host = "mongodb://10.227.63.170:27017"
+UserName = "root"
+Password = "xxx123"
+DbName = "saas_dc_detect"
+
+[mq]
+TaskName = "saasyd.detect.task"
+QueueName = "saasyd_detect_queue"
+RoutingKey = "saasyd_detect_queue"
+ExchangeName = "saasyd_detect_exchange"
+ExchangeType = "direct"
+BrokerUrl = "amqp://root:xxx123@10.227.63.170:5672/saasyd_mq_vhost"
+
+[availconf]
+UpdateTaskIntvl = 3600
+CheckIntvl = 10
+CheckTimeout = 7
+KeepLastPointNum = 3
+MaxFlyCheckCount = 20
+EntryAddr = "0.0.0.0:36161"
+EntryPassword = "123456789"
+MdbgAddr = "0.0.0.0:26161"
+DetectType = "acl"
+PointBound = 3
+RegionBound = 1
+DetectLimit = 0
+AlarmAlias = ["12808","14424"]
+GrpcAddr = "10.227.63.72:36164"
+AlarmIntvl = 600
+
+

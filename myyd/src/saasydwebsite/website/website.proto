@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package website;
+
+enum Code {
+    SUCCESS                         = 0;
+}
+
+message GetBusinessInfosReq {
+    string ref_cluster_node         = 1;
+    string ref_clouduser            = 2;
+    uint32 offset                   = 3;
+    uint32 limit                    = 4;
+    string msg_type                 = 5;
+}
+
+message GetBusinessInfosRsp {
+    uint32 code                     = 1;
+    string msg                      = 2;
+    message BusinessInfo{
+        string ref_clouduser        = 1;
+        string domain               = 2;
+        string url                  = 3;
+        string business_name        = 4;
+        uint32 port                 = 5;
+        string protocol             = 6;
+        repeated string ip          = 7;
+        string ref_cluster_node     = 8;
+        message InsiteIp{
+            string type             = 1;
+            string extranet_ip      = 2;
+        }
+        repeated InsiteIp insite_ip = 9;
+        string ref_reserve_node     = 10;
+        InsiteIp reserve_insite_ip  = 11;
+        uint32 dns_type             = 12;
+        uint32 checkIntvl           = 13;
+        uint32 checkLevel           = 14;
+    }
+    message Data{
+        repeated BusinessInfo list  = 1;
+    }
+    Data data                       = 3;
+}
+
+message GetClusterIPInfosReq {
+    uint32 offset                   = 1;
+    uint32 limit                    = 2;
+    string msg_type                 = 3;
+}
+
+message GetClusterIPInfosRsp {
+    uint32 code                     = 1;
+    string msg                      = 2;
+    message ClusterIPInfo{
+        string node_name            = 1;
+        string owner_type           = 2;
+        string ref_service_group    = 3;
+        uint32 type                 = 4;
+        message Ip{
+            string type             = 1;
+            string extranet_ip      = 2;
+        }
+        Ip ip                       = 5;
+    }
+    message Data{
+        repeated ClusterIPInfo list = 1;
+    }
+    Data data                       = 3;
+}
+
+message GetDomainIPReq{
+
+}
+
+message GetDomainIPRsp{
+    uint32 code                     = 1;
+    string msg                      = 2;
+    message Info{
+        string domain               = 1;
+        repeated string ip          = 2;
+        uint32 is_in                = 3;
+    }
+    message Data{
+        repeated Info list          = 1;
+    }
+    Data data                       = 3;
+}
+
+service Website {
+    //获取业务信息
+    rpc get_business_infos(GetBusinessInfosReq) returns (GetBusinessInfosRsp) {}
+    //获取集群节点IP信息
+    rpc get_cluster_ip_infos(GetClusterIPInfosReq) returns (GetClusterIPInfosRsp) {}
+    //获取域名ip
+    rpc get_domain_ip(GetDomainIPReq) returns (GetDomainIPRsp) {}
+}

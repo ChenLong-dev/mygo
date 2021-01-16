@@ -1,0 +1,9 @@
+## server conf
+[mongo]
+Host = "mongodb://mongodb.gz_4.com:27017,mongodb.sh_4.com:27017,mongodb.bj_4.com:27017/?replicaSet=cloudwaf"
+UserName = "root"
+Password = "sangfor_saas_mongodb_root123"
+DbName = "CLOUD_WAF_data"
+
+[availconf]
+listenAddr = "0.0.0.0:36164"
